@@ -42,15 +42,25 @@ public class PointSetter {
                 case "right":
                 case "r":
                     moveRight(location);
+                    break;
                 case "left":
                 case "l":
                     moveLeft(location);
+                    break;
                 case "up":
                 case "u":
                     moveUp(location);
+                    break;
                 case "down":
                 case "d":
                     moveDown(location);
+                    break;
+                case "exit":
+                case "q":
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Enter a valid command: right (r), left (l), up (u), down (d), exit (q)");
             }
         }
     }
