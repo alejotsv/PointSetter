@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class PointSetter {
     public static void main(String[] args) {
         Point location = new Point(0, 0);
-
-
+        getDirections(location);
     }
 
     static void readLocation(Point location) {
@@ -55,13 +54,20 @@ public class PointSetter {
                 case "d":
                     moveDown(location);
                     break;
+                case "coordinates":
+                case "c":
+                    readLocation(location);
+                    break;
                 case "exit":
                 case "q":
                     exit = true;
                     break;
                 default:
-                    System.out.println("Enter a valid command: right (r), left (l), up (u), down (d), exit (q)");
+                    System.out.println("Enter a valid command: right (r), left (l), up (u), down (d), coordinates (c), exit (q)");
             }
         }
+        System.out.println("Your final position is:");
+        readLocation(location);
+        System.out.println("Bye!");
     }
 }
